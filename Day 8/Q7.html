@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            border: 2px solid black;
+            text-align: center;
+            margin: 10px;
+            padding: 10px;
+            margin-left: 40%;
+            margin-top: 10%;
+            width: 200px;
+            height: 270px;
+        }
+
+        button {
+            height: 39px;
+            width: 39px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: rgb(167, 166, 166);
+
+        }
+        #result {
+            height: 20px;
+            width: 160px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bdr">
+        <h2><b>CALCULATOR</b> </h2>
+        <input type="text" id="result" readonly>
+        <br><br>
+
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button onclick="appendValue('+')">+</button>
+        <br>
+
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button onclick="appendValue('-')">-</button>
+        <br>
+
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button onclick="appendValue('*')">*</button>
+        <br>
+
+        <button onclick="appendValue('0')">0</button>
+        <button onclick="appendValue('.')">.</button>
+        <button onclick="clearResult()">C</button>
+        <button onclick="calculateResult()">=</button>
+    </div>
+    <script>
+        function appendValue(val) {
+            document.getElementById('result').value += val;
+        }
+        function clearResult() {
+            document.getElementById('result').value = '';
+        }
+        function calculateResult() {
+            let exp = document.getElementById('result').value;
+            try {
+                document.getElementById('result').value = eval(exp);
+            } catch {
+                document.getElementById('result').value = 'Error';
+
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            color: #000000;
+            background-color: #d5d5d5;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1" style="width:80px;height:80px;display:none;background-color:rgb(21, 162, 180);">
+    </div>
+
+    <p></p>
+
+    <button type="button" id="b1">Slide Down </button>
+    <button type="button" id="b2">Slide UP </button>
+    <button type="button" id="b3">Slide UP/Down </button>
+
+
+    <button type="button" id="b4">stop </button>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $("#b1").click(() => {
+            $("#d1").slideDown(500)
+        })
+        $("#b2").click(() => {
+            $("#d1").slideUp(500)
+        })
+        $("#b3").click(() => {
+            $("#d1").slideToggle(500)
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       div{
+        margin: 10px;
+        padding: 10px;
+       }
+       span{
+        display: inline-block;
+       }
+        #id1{
+            height: 50px;
+            width: 100%;
+            border: 2px solid gray;
+            /* margin: 10px;
+            padding: 10px; */
+        } #id2{
+            height: 50px;
+            width: 150px;
+            border: 2px solid gray;
+            /* margin: 10px;
+            padding: 10px; */
+            font-style: italic;
+        } #id3{
+            height: 50px;
+            width: 150px;
+            border: 2px solid gray;
+            /* margin: 10px;
+            padding: 10px; */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body><div>
+    <input type="text" id="id1"><br><br>
+    <input type="submit" onclick="set()">
+</div>
+<span>
+    <p id="id2"></p>
+    <p id="id3"></p>
+</span>
+    <script  src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+    <script>
+        function set(){
+            let a = $("#id1").val()
+            console.log(a)
+            $("#id2").text(a)
+            $("#id3").text(a)
+        }
+   
+      
+    </script>
+</body>
+</html>

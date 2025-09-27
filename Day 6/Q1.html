@@ -1,0 +1,40 @@
+<!-- 1) use browser callback functions
+     setInterval
+	 clearInterval
+	 setTimeout -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h3 id = "demo"></h3>
+</head>
+
+<body>
+    <script>
+        setTimeout(() => { //setTimeout ==> calls single time only in entire code
+            alert("Hello")
+        }, 1000);
+
+        let interval = setInterval(() => {//setInterval ==> calls multiple time 
+            myFunction()
+        }, 1000);//1000ms
+
+        function myFunction() {
+            let d = new Date();
+            document.getElementById("demo").innerHTML =
+                d.getHours() + ":" +
+                d.getMinutes() + ":" +
+                d.getSeconds();
+        }
+
+setTimeout(() => {
+    clearInterval(interval)//clearInterval ==> stops the function scheduled by setInterval
+}, 5000);
+    </script>
+</body>
+
+</html>

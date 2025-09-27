@@ -1,0 +1,35 @@
+<!-- use try and catch and finally block in JavaScript  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    function divideNumbers(a,b) {
+  try {
+    if (typeof a !== 'number' || typeof b !== 'number') {
+      throw new Error("Both arguments must be numbers");
+    }
+    if (b === 0) {
+      throw new Error("Division by zero is not allowed");
+    }
+    let result = a / b;
+    console.log("Result:", result);
+  } catch (error) {
+    console.error("Error:", error.message);
+  } finally {
+    console.log("Division operation completed.");
+  }
+}
+
+divideNumbers(2,2)
+divideNumbers(2123123,2)
+divideNumbers("a",2)
+
+</script>
+</body>
+</html>

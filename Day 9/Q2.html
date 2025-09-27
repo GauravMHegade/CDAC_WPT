@@ -1,0 +1,29 @@
+<!-- 1) use ajax concept and display data in html page 
+  on button click from text file  -->
+<html>
+
+<body>
+
+    <button onclick="showData()">Data From File</button>
+    <div id="output">Div</div>
+</body>
+
+<script>
+    function showData(){
+    let myPromise = new Promise(function(resolve, reject){
+        let request = new XMLHttpRequest();
+      request.onload = function() {
+        if (this.status === 200) {
+            console.log(this.responseText)
+            let dataJson = this.responseText
+          document.getElementById("output").innerHTML = dataJson;
+        }
+      };
+      request.open("GET", "pr.txt", true);
+      request.send();
+    })
+}
+
+</script>
+
+</html>

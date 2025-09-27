@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #cfcfcf;
+        }
+
+        div {
+            margin: 30px 10px 10px 10px;
+            padding: 10px 10px 10px 10px;
+            background-color: #cfcfcf;
+            text-align: center;
+        }
+
+        #op-table {
+            border: 1px solid black;
+            margin-left: 20%;
+            width: 60%;
+        }
+
+        tr,th {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div>
+            First Name: <input type="text" id="f_name"><br><br>
+            Last Name: <input type="text" id="l_name"><br><br>
+            Email: <input type="email" id="Email"><br><br>
+            Date of Birth: <input type="date" id="dob"><br><br>
+            <input type="submit" onclick="adddata()">
+        </div>
+
+    </form>
+
+    <table id="op-table">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>DOB</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        function adddata() {
+         
+            let f_name = document.getElementById('f_name').value.trim()
+            let l_name = document.getElementById('l_name').value.trim()
+            let Email = document.getElementById('Email').value.trim()
+            let dob = document.getElementById('dob').value.trim()
+
+            let table = document.getElementById('op-table')
+            let newRow = table.insertRow(table.rows.length);
+
+
+                if (!f_name || !l_name || !Email || !dob) {
+                    alert('All fields are required!');
+                    return;
+                }
+           
+
+            newRow.insertCell(0).innerHTML = f_name;
+            newRow.insertCell(1).innerHTML = l_name;
+            newRow.insertCell(2).innerHTML = Email;
+            newRow.insertCell(3).innerHTML = dob;
+        }
+
+    </script>
+</body>
+
+</html>

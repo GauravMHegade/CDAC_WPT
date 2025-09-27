@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Random Color Animated Divs</title>
+  <style>
+    #left_one, #right_one {
+      position: absolute;
+      top: 10px;
+      height: 100px;
+      width: 100px;
+      border: 1px solid black;
+      background-color: red;
+      transition: background-color 0.5s ease;
+    }
+    #left_one {
+      left: 10px;
+    }
+    #right_one {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="left_one"></div>
+  <div id="right_one"></div>
+
+  <script>
+
+    function getRandomColor() {
+      return '#' + Math.floor(Math.random() * 16777215);
+    }
+
+    let leftDiv = document.getElementById('left_one');
+    let rightDiv = document.getElementById('right_one');
+
+
+    let interval_left = setInterval(() => {
+      leftDiv.style.backgroundColor = getRandomColor();
+    }, 1000);
+
+   
+    let interval_right = setInterval(() => {
+      rightDiv.style.backgroundColor = getRandomColor();
+    }, 1000);
+
+
+    setTimeout(() => {
+      clearInterval(interval_left);
+      clearInterval(interval_right);
+    }, 5000);
+  </script>
+</body>
+</html>

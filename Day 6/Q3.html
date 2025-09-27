@@ -1,0 +1,78 @@
+<!-- 3)  accept data from user using input fields 
+      firstName LastName age 
+	  
+	  store data in Object format in function 
+	  and convert into JSON format 
+	  
+	  and display data in table format from JSON format data  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #settable{
+            border: 2px solid gray;
+            height: 50px;
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+        }
+        th, td{
+            margin: 10px;
+            padding: 10px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    First name: <input type="text" id="fname"><br>
+    Last name: <input type="text" id="lname"><br>
+    Age: <input type="number" id="age"><br>
+    <input type="submit" onclick="getdata()">
+
+    <table id="settable" >
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+
+    </table>
+    <script>
+        function getdata(){
+            let _fname = document.getElementById("fname").value;
+            let _lname = document.getElementById("lname").value;
+            let _age = document.getElementById("age").value;
+
+            let u_data = {
+                fname : _fname,
+                lname : _lname,
+                age : _age
+            }
+            console.log("after converting to object data")
+            console.log(u_data)
+            let myJSON = JSON.stringify(u_data)
+
+            console.log("after converting to JSON data")
+            console.log(myJSON);
+
+            let table = document.getElementById('settable')
+            let newRow = table.insertRow(table.rows.length);
+
+            newRow.insertCell(0).innerHTML = u_data.fname;
+            newRow.insertCell(1).innerHTML = u_data.lname;
+            newRow.insertCell(2).innerHTML = u_data.age;
+
+        }
+// getdata();
+    </script>
+
+</body>
+
+</html>

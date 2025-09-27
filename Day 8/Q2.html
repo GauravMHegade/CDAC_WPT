@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="apply()">insert</button>
+    <table id="id1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        function apply(){
+            let request = new XMLHttpRequest();
+             let tbody = document.querySelector("#id1 tbody");
+            request.onload = function(){
+                if(this.status == 200){
+                    console.log(this.responseText);
+                    let op = this.responseText;
+                    let posts = JSON.parse(this.responseText);
+                    console.log(posts);
+                    
+                    posts.forEach(post => {
+                        let row = `<tr><td>${post.id}</td><td>${post.title}</td></tr>`;
+                        tbody.innerHTML += row;
+                    });
+                } else {
+                    console.error("Failed to load data", this.status);
+                }
+            };
+            request.open("GET", "https://jsonplaceholder.typicode.com/posts", true );
+            request.send();
+        }
+    </script>
+</body>
+</html>

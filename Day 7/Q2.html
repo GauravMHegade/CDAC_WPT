@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ip" placeholder="Enter a Number">
+    <p id="op"></p>
+     <script  src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+    <script>
+        $(document).ready(function(){
+            $("#ip").on("input", function(){
+                let val = $("#ip").val();
+                let fact = 1;
+                for (let i = 1; i <= val; i++) {
+                    fact *= i;
+                    
+                }
+                $("#op").text(fact)
+            })
+        })
+        
+    </script>
+</body>
+</html>

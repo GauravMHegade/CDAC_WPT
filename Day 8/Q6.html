@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Manipulation</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+     
+    </style>
+</head>
+<body>
+
+    <p id="myParagraph">This is a paragraph.</p>
+
+    <button onclick="addClass()">Add Highlight</button>
+    <button onclick="removeClass()">Remove Error</button>
+    <button onclick="toggleClass()">Toggle Highlight</button>
+
+    <script>
+        let paragraph = document.getElementById('myParagraph');
+
+        // Adds the 'highlight' class to the paragraph
+        function addClass() {
+            paragraph.classList.add('highlight');
+        }
+
+        // Removes the 'error' class from the paragraph
+        function removeClass() {
+            paragraph.classList.remove('highlight');
+        }
+
+        // Toggles the 'highlight' class (adds it if absent, removes it if present)
+        function toggleClass() {
+            paragraph.classList.toggle('highlight');
+        }
+    </script>
+
+</body>
+</html>
