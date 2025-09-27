@@ -1,0 +1,62 @@
+<!-- 3) create html page -  with 
+	1 textfield and multiple buttons 
+	
+button captions are - 1)Add at End 
+		 2) Add at Start
+		3) delete from end 
+		4) delete from start
+		5) display odd numbers 
+		6) display even numbers
+hint -  use Array predined methods -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+        <p id="id1"></p>
+        <input id="i" type="text">
+        <button onclick="add_end()">Add at End</button>
+        <button onclick="add_start()">Add at Start</button>
+        <button onclick="delete_end()">Delete at End</button>
+        <button onclick="delete_start()">Delete at Start</button>
+
+ 
+    <script>
+        const a = []
+        function add_start() {
+            let d = document.getElementById('i').value;
+            a.unshift(d)
+            console.log(a)
+            show()
+        }
+         function add_end() {
+            let d = document.getElementById('i').value;
+            a.push(d)
+            console.log(a)
+            show()
+        } 
+        function delete_start() {
+            let d = document.getElementById('i').value;
+            a.shift(d)
+            console.log(a)
+            show()
+        } 
+          function delete_end() {
+            let d = document.getElementById('i').value;
+            a.pop(d)
+            console.log(a)
+            show()
+        }
+        function show() {
+            document.getElementById("id1").innerHTML = a
+        }
+    </script>
+</body>
+
+</html>

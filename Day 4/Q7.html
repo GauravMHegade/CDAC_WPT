@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Form</title>
+</head>
+<body>
+
+    First Name: <input type="text" id="fname">
+    Last Name: <input type="text" id="lname">
+    Email: <input type="text" id="em">
+    DOB: <input type="date" id="dob">
+    
+    <button onclick="validateInput()">Validate</button>
+
+    <p id="error"></p>
+
+    <script>
+        function validateInput() {
+           
+            const errorElement = document.getElementById('error');
+            
+           
+            const f_name = document.getElementById('fname').value.trim();
+            const l_name = document.getElementById('lname').value.trim();
+            const email = document.getElementById('em').value.trim();
+            const DOB = document.getElementById('dob').value; 
+
+        
+            if (!f_name || !l_name || !email || !DOB) {
+                errorElement.textContent = "ERROR: All fields are required!";
+            } else {
+                
+                errorElement.textContent = "Success! All data entered.";
+            }
+        }
+    </script>
+
+</body>
+</html>

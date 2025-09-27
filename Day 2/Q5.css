@@ -1,0 +1,36 @@
+input{
+    color: rgb(255, 255, 255);
+    background: #000000;
+    font-style: italic;
+    border: 2px solid rgb(255, 255, 255);
+}
+select{
+    color: rgb(255, 255, 255);
+    background: #000000;
+    font-style: italic;
+    border: 2px solid rgb(255, 255, 255);
+}
+p{
+    color: rgb(230 255 1);
+    background: #000000;
+    font-style: italic;
+    border: 2px solid black;
+}
+.moderate{
+    color: rgb(255, 1, 1);
+    background: #949494;
+    font-style: italic;
+    border: 2px solid black;
+}
+.gaudy{
+    color: rgb(255, 1, 1);
+    background: #949494;
+    font-style: italic;
+    border: 2px solid black;
+}
+#id1{
+    color: rgb(255, 1, 1);
+    background: #949494;
+    font-style: italic;
+    border: 2px solid black;
+}
